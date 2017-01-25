@@ -1,0 +1,21 @@
+{
+    "name": "dakine/matryoshka",
+    "description": "Caching test",
+    "license": "MIT",
+    "keywords": ["laravel", "cache"],
+    "authors": [
+        {
+            "name": "dakine",
+            "email": "mhnrcjgs@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dakine\\Matryoshka\\": "src/"
+        }
+    }
+}
