@@ -4,39 +4,44 @@
 namespace Dakine\Matryoshka;
 
 
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Contracts\Cache\Repository as Cache;
 use Illuminate\Support\Facades\Log;
 
 class RussianCaching
 {
 
-    protected static $key = [];
+    private $cache;
 
-    public static function setUp($model)
+    public function __construct(Cache $cache)
     {
 
-        static::$key[] = $key = $model->getCacheKey();
-
-        Log::debug('KEY: '.$key);
-
-        ob_start();
-
-        Log::debug(Cache::get($key));
-
-        return false; //Cache::has($key);
-
+        $this->cache = $cache;
     }
 
-    public static function tearDown()
+    public function put($key, $fragment)
     {
-        $key = array_pop(static::$key);
+        $key = $this->normalizeCacheKey($key);
 
-        $html = ob_get_clean();
-
-        return Cache::rememberForever($key, function () use ($html) {
-            return $html;
+        return $this->cache->rememberForever($key, function () use ($fragment) {
+            return $fragment;
         });
+    }
 
+    public function has($key)
+    {
+        $key = $this->normalizeCacheKey($key);
+
+        return $this->cache->has($key);
+    }
+
+    private function normalizeCacheKey($key)
+    {
+        if ($key instanceof \Illuminate\Database\Eloquent\Model)
+        {
+            return $key->getCacheKey();
+        }
+
+        return $key;
     }
 
 }
