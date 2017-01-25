@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f2a5e0f451486c147bce6fe02f947643",
-    "content-hash": "193ed5503a9664e3892dd3e49dd88bab",
+    "hash": "4db6970d22135849a992816f238e74cf",
+    "content-hash": "418e943bed268bf1ced46b341ff467b7",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -935,12 +935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "e7896be1b3b5257e5b4454220736ee1ccb5cc572"
+                "reference": "b9287cb28b5575da924e58a99bc7c757ec19f92c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e7896be1b3b5257e5b4454220736ee1ccb5cc572",
-                "reference": "e7896be1b3b5257e5b4454220736ee1ccb5cc572",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b9287cb28b5575da924e58a99bc7c757ec19f92c",
+                "reference": "b9287cb28b5575da924e58a99bc7c757ec19f92c",
                 "shasum": ""
             },
             "require": {
@@ -1009,7 +1009,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-01-24 18:35:42"
+            "time": "2017-01-25 09:04:42"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

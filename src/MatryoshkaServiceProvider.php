@@ -37,7 +37,10 @@ class MatryoshkaServiceProvider extends ServiceProvider
     {
         //
         $this->app->singleton(BladeDirective::class, function() {
-            return new BladeDirective();
+
+            return new BladeDirective(
+                new RussianCaching(app('cache.store'))
+            );
         });
     }
 }
